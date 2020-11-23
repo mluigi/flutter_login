@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
+import 'package:Tamponami/util.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'src/providers/login_theme.dart';
@@ -573,7 +574,7 @@ class _FlutterLoginState extends State<FlutterLogin>
                   alignment: Alignment.center,
                   children: <Widget>[
                     Positioned(
-                      child: AuthCard(
+                      child: auth().currentUser == null ? AuthCard(
                         key: authCardKey,
                         padding: EdgeInsets.only(top: cardTopPosition),
                         loadingController: _loadingController,
@@ -581,7 +582,7 @@ class _FlutterLoginState extends State<FlutterLogin>
                         passwordValidator: passwordValidator,
                         onSubmit: _reverseHeaderAnimation,
                         onSubmitCompleted: widget.onSubmitAnimationCompleted,
-                      ),
+                      ): null,
                     ),
                     Positioned(
                       top: cardTopPosition - headerHeight - headerMargin,
