@@ -583,22 +583,25 @@ class _FlutterLoginState extends State<FlutterLogin>
                     Positioned(
                       child: auth().currentUser == null
                           ? AuthCard(
-                        key: authCardKey,
-                        padding: EdgeInsets.only(top: cardTopPosition),
-                        loadingController: _loadingController,
-                        emailValidator: emailValidator,
-                        passwordValidator: passwordValidator,
-                        onSubmit: _reverseHeaderAnimation,
-                        onSubmitCompleted:
-                        widget.onSubmitAnimationCompleted,
-                      )
+                              key: authCardKey,
+                              padding: EdgeInsets.only(top: cardTopPosition),
+                              loadingController: _loadingController,
+                              emailValidator: emailValidator,
+                              passwordValidator: passwordValidator,
+                              onSubmit: _reverseHeaderAnimation,
+                              onSubmitCompleted:
+                                  widget.onSubmitAnimationCompleted,
+                            )
                           : null,
                     ),
                     Positioned(
                       top: cardTopPosition - headerHeight - headerMargin,
                       child: _buildHeader(headerHeight, loginTheme),
                     ),
-                    this.widget.bottomWidget,
+                    Positioned(
+                      bottom: 0.0,
+                      child: this.widget.bottomWidget,
+                    )
                   ].filterNotNull(),
                 ),
               ),
