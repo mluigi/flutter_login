@@ -2,8 +2,8 @@ library flutter_login;
 
 import 'dart:math';
 
-import 'package:Tamponami/utils/extensions.dart';
-import 'package:Tamponami/utils/util.dart';
+import 'package:t_pass/utils/extensions.dart';
+import 'package:t_pass/utils/util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
